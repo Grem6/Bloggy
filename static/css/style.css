@@ -2,12 +2,12 @@
 
 @font-face {
   font-family: 'autumn';
-  src: url('/static/assets/fonts/autumn-in-november/Autumn\ in\ November.ttf')
+  src: url('/static/assets/fonts/autumn-in-november/Autumn_in_November.ttf')
     format('truetype');
 }
 @font-face {
   font-family: 'signature';
-  src: url('/static/assets/fonts/creattion-demo/Creattion\ Demo.otf')
+  src: url('/static/assets/fonts/creattion-demo/Creattion_Demo.otf')
     format('truetype');
 }
 
