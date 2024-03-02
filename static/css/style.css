@@ -181,7 +181,8 @@ body {
 .new-posts {
   margin-top: 20px;
   padding: 20px;
-  line-height: 150%;
+  /* line-height: 150%; */
+  line-height: 25px;
   width: 100%;
   background-color: #fffffe;
   white-space: normal;
