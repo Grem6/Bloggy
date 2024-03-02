@@ -56,6 +56,7 @@ body {
 }
 
 .navbar-link {
+  color: inherit;
   transition: all 0.3s;
   text-decoration: none;
 }
@@ -120,6 +121,7 @@ body {
 }
 
 .post {
+  color: inherit;
   margin-top: 40px;
 }
 
