@@ -6,6 +6,7 @@ from dotenv import load_dotenv
 
 load_dotenv()
 
+
 app = Flask(__name__)
 client = MongoClient(os.environ.get("MONGODB_URI"))
 app.db = client.bloggy
