@@ -251,3 +251,39 @@ body {
 .footer-author:hover {
   color: aqua;
 }
+
+/* responsive (small-screen-fix) */
+
+@media screen and (max-width: 768px) {
+  .navbar {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .navbar-main {
+    margin-bottom: 20px;
+  }
+
+  .navbar-navigation {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+  }
+
+  .navbar-navigation-items {
+    margin: 0;
+  }
+
+  .navbar-link {
+    font-size: 16px;
+  }
+
+  .navbar-title {
+    font-size: 30px;
+  }
+
+  .navbar-img {
+    height: 60px;
+    margin-right: 10px;
+  }
+}
