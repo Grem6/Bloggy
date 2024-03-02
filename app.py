@@ -4,6 +4,8 @@ from flask import Flask, redirect, render_template, request, url_for
 from pymongo import MongoClient
 from dotenv import load_dotenv
 
+load_dotenv()
+
 app = Flask(__name__)
 client = MongoClient(os.environ.get("MONGODB_URI"))
 app.db = client.bloggy
