@@ -2,7 +2,6 @@ import datetime
 import os
 from flask import Flask, redirect, render_template, request, url_for
 from pymongo import MongoClient
-from dotenv import load_dotenv
 
 MONGO = os.getenv("MONGODB_URI")
 
