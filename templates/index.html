@@ -145,21 +145,17 @@
       }
     </script>
     <script>
-      // Get the login and logout modals
       var loginModal = document.getElementById('loginModal');
       var logoutModal = document.getElementById('logoutModal');
 
-      // Function to open the login modal
       function openLoginModal() {
         loginModal.style.display = 'block';
       }
 
-      // Function to close the login modal
       function closeLoginModal() {
         loginModal.style.display = 'none';
       }
 
-      // Close the modal when the user clicks outside of it
       window.onclick = function (event) {
         if (event.target == loginModal) {
           closeLoginModal();
