@@ -2,7 +2,10 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0, maximum-scale=1.0"
+    />
     <title>Bloggy</title>
     <link rel="stylesheet" href="/static/css/style.css" />
     <link
@@ -29,10 +32,21 @@
         <li class="navbar-navigation-items">
           <a href="#about" class="navbar-link">About</a>
         </li>
+        {% if not logged_in %}
+        <li class="navbar-navigation-items">
+          <a href="#" onclick="openLoginModal()" class="navbar-link">Login</a>
+        </li>
+        {% endif %} {% if logged_in %}
+        <li class="navbar-navigation-items">
+          <a href="/logout" class="navbar-link-icon"
+            ><ion-icon name="exit-outline"></ion-icon
+          ></a>
+        </li>
+        {% endif %}
       </ul>
     </header>
-
     <main class="main">
+      {% if logged_in %}
       <section>
         <form class="form" method="POST">
           <p class="form-input">
@@ -48,7 +62,7 @@
           <button class="form-submit-button" type="submit">Add Entry</button>
         </form>
       </section>
-
+      {% endif %}
       <section id="posts">
         <h1 class="posts">Thoughts</h1>
         {% for post in posts %}
@@ -56,6 +70,7 @@
           <div class="post-header">
             <h2 class="post-title">{{ post[0] | truncate(30, true) }}</h2>
             <time class="post-date" datetime="3-1-2024">{{ post[2] }}</time>
+            {% if logged_in %}
             <form
               id="delete-form-{{ loop.index }}"
               action="/delete/{{ loop.index }}"
@@ -69,6 +84,7 @@
                 <ion-icon name="trash-outline"></ion-icon>
               </button>
             </form>
+            {% endif %}
           </div>
           <p class="new-posts">{{ post[0] }}</p>
         </article>
@@ -80,11 +96,11 @@
       <div class="footer-content">
         <section class="left">
           <div class="footer-column">
-            <a href="https://www.instagram.com/grem.san/" class="footer-link"
-            target="_blank"><ion-icon class="icons" name="logo-instagram"></ion-icon
+            <a href="#" class="footer-link"
+              ><ion-icon class="icons" name="logo-instagram"></ion-icon
             ></a>
-            <a href="https://github.com/Grem6" class="footer-link"
-            target="_blank"><ion-icon class="icons" name="logo-github"></ion-icon
+            <a href="#" class="footer-link"
+              ><ion-icon class="icons" name="logo-github"></ion-icon
             ></a>
           </div>
         </section>
@@ -98,6 +114,20 @@
         </section>
       </div>
     </footer>
+
+    <div id="loginModal" class="modal">
+      <div class="modal-content">
+        <span class="close" onclick="closeLoginModal()">&times;</span>
+        <h2>Login</h2>
+        <form id="loginForm" action="/login" method="POST">
+          <label for="username">Username:</label>
+          <input type="text" id="username" name="username" required />
+          <label for="password">Password:</label>
+          <input type="password" id="password" name="password" required />
+          <button type="submit">Login</button>
+        </form>
+      </div>
+    </div>
 
     <script
       type="module"
@@ -113,6 +143,31 @@
           document.getElementById('delete-form-' + index).submit();
         }
       }
+    </script>
+    <script>
+      // Get the login and logout modals
+      var loginModal = document.getElementById('loginModal');
+      var logoutModal = document.getElementById('logoutModal');
+
+      // Function to open the login modal
+      function openLoginModal() {
+        loginModal.style.display = 'block';
+      }
+
+      // Function to close the login modal
+      function closeLoginModal() {
+        loginModal.style.display = 'none';
+      }
+
+      // Close the modal when the user clicks outside of it
+      window.onclick = function (event) {
+        if (event.target == loginModal) {
+          closeLoginModal();
+        }
+        if (event.target == logoutModal) {
+          closeLogoutModal();
+        }
+      };
     </script>
   </body>
 </html>
