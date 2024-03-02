@@ -115,13 +115,13 @@ body {
 }
 
 .posts {
-  font-size: 9px;
+  font-size: 10px;
   text-transform: uppercase;
   margin-bottom: 12px;
+  color: inherit;
 }
 
 .post {
-  color: inherit;
   margin-top: 40px;
 }
 
