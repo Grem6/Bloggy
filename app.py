@@ -1,12 +1,13 @@
 import datetime
+import os
 from flask import Flask, redirect, render_template, request, url_for
 from pymongo import MongoClient
 from dotenv import load_dotenv
 
-load_dotenv()
+MONGO = os.getenv("MONGODB_URI")
 
 app = Flask(__name__)
-client = MongoClient("MONGODB_URI")
+client = MongoClient(MONGO)
 app.db = client.bloggy
 
 
