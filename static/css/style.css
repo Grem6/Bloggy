@@ -1,0 +1,254 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@100..900&family=Poppins:wght@300;400;500;600;700;800;900&display=swap');
+
+@font-face {
+  font-family: 'autumn';
+  src: url('/static/assets/fonts/autumn-in-november/Autumn\ in\ November.ttf')
+    format('truetype');
+}
+@font-face {
+  font-family: 'signature';
+  src: url('/static/assets/fonts/creattion-demo/Creattion\ Demo.otf')
+    format('truetype');
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: 'Inter', sans-serif;
+  background-color: #e3f6f5;
+  color: #272343;
+}
+
+.navbar {
+  max-width: 640px;
+  margin: 40px auto;
+  padding: 0 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 25px;
+}
+.navbar-title {
+  font-family: 'autumn', sans-serif;
+}
+
+.navbar-main {
+  display: flex;
+  align-items: center;
+}
+
+.navbar-img {
+  height: 80px;
+  margin-right: 5px;
+}
+
+.navbar-navigation {
+  display: flex;
+  font-size: 20px;
+  gap: 50px;
+  list-style: none;
+}
+
+.navbar-link {
+  transition: all 0.3s;
+  text-decoration: none;
+}
+.navbar-link:hover {
+  font-weight: bold;
+}
+
+.main {
+  max-width: 450px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  padding-top: 12px;
+}
+
+.form-input {
+  width: 100%;
+}
+
+.form-textarea {
+  width: inherit;
+  height: 190px;
+  border: 1px solid #ccc;
+  font-family: Arial, sans-serif;
+  font-size: 14px;
+  line-height: 1.5;
+  padding: 10px;
+  border-radius: 5px;
+  margin: 0 0 12px;
+  background-color: #fffffe;
+}
+
+.form-submit-button {
+  background-color: #272343;
+  color: #fffffe;
+  padding: 12px;
+  font-size: 16px;
+  border: none;
+  font-weight: bold;
+  transition: all 0.3s;
+  margin-bottom: 20px;
+}
+
+.form-submit-button:hover {
+  background-color: #272343;
+  color: #fffffe;
+  padding: 12px;
+  font-size: 16px;
+  font-weight: bold;
+  transform: scale(0.9, 0.9);
+}
+
+.posts {
+  font-size: 9px;
+  text-transform: uppercase;
+  margin-bottom: 12px;
+}
+
+.post {
+  margin-top: 40px;
+}
+
+.post-header {
+  display: flex;
+  gap: 12px;
+  align-items: center;
+}
+
+.post-title {
+  display: flex;
+  flex-grow: 1;
+  font-size: 15px;
+}
+
+.post-header form {
+  width: 20px;
+}
+
+.post-date {
+  font-weight: bolder;
+  font-size: 10px;
+  background-color: #2d334a;
+  color: #fffffe;
+  border-radius: 10px;
+  padding: 5px;
+}
+
+.del-button {
+  border: none;
+  background-color: inherit;
+  font-size: 20px;
+  color: black;
+  transition: all 0.3s;
+}
+
+.del-button:hover {
+  transform: scale(1.2);
+  color: red;
+}
+
+.new-posts {
+  margin-top: 20px;
+  padding: 20px;
+  line-height: 150%;
+  width: 100%;
+  background-color: #fffffe;
+  white-space: normal;
+  overflow-wrap: break-word;
+}
+
+.footer {
+  margin-top: 110px;
+  background-color: #fffffe;
+  padding: 20px;
+}
+
+.footer-content {
+  max-width: 640px;
+  flex-direction: row;
+  display: flex;
+  margin: 0 auto;
+}
+
+.left {
+  color: #2d334a;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  flex-grow: 2;
+  padding: 10px 0 10px 10px;
+}
+
+.right {
+  display: flex;
+  justify-content: space-between;
+  flex-direction: row;
+  flex-grow: 1;
+  padding: 10px 0 10px 10px;
+}
+
+.footer-column {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.footer-link {
+  color: inherit;
+  text-decoration: none;
+  font-size: 15px;
+  margin: 12px;
+  transition: all 0.3s;
+}
+
+.footer-link:hover {
+  font-weight: bold;
+  transform: scale(1.2);
+}
+
+.footer-link .icons {
+  font-size: 30px;
+  transition: transform 0.3s;
+}
+.footer-link .icons:hover {
+  transform: scale(1.2);
+}
+
+.footer-about {
+  display: flex;
+  align-items: baseline;
+}
+
+.footer-logo {
+  font-family: 'autumn', sans-serif;
+  font-size: 15px;
+  margin-right: 12px;
+}
+
+.footer-author {
+  font-family: 'signature', sans-serif;
+  font-size: 50px;
+  color: #272343;
+  font-weight: bold;
+  transition: color 0.3s;
+}
+
+.footer-author:hover {
+  color: aqua;
+}

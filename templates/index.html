@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Bloggy</title>
+    <link rel="stylesheet" href="/static/css/style.css" />
+    <link
+      type="image/png"
+      sizes="96x96"
+      rel="icon"
+      href="/static/assets/images/favorite-96.png"
+    />
+  </head>
+  <body>
+    <header class="navbar">
+      <div class="navbar-main">
+        <img
+          class="navbar-img"
+          src="/static/assets/images/thinking.png"
+          alt="Bloggy logo"
+        />
+        <span class="navbar-title">Bloggy</span>
+      </div>
+      <ul class="navbar-navigation">
+        <li class="navbar-navigation-items">
+          <a href="#posts" class="navbar-link">Recent</a>
+        </li>
+        <li class="navbar-navigation-items">
+          <a href="#about" class="navbar-link">About</a>
+        </li>
+      </ul>
+    </header>
+
+    <main class="main">
+      <section>
+        <form class="form" method="POST">
+          <p class="form-input">
+            <textarea
+              class="form-textarea"
+              placeholder="Got something on your mind?"
+              name="content"
+              id="entry"
+              required
+              aria-label="entry"
+            ></textarea>
+          </p>
+          <button class="form-submit-button" type="submit">Add Entry</button>
+        </form>
+      </section>
+
+      <section id="posts">
+        <h1 class="posts">Thoughts</h1>
+        {% for post in posts %}
+        <article class="post">
+          <div class="post-header">
+            <h2 class="post-title">{{ post[0] | truncate(30, true) }}</h2>
+            <time class="post-date" datetime="3-1-2024">{{ post[2] }}</time>
+            <form
+              id="delete-form-{{ loop.index }}"
+              action="/delete/{{ loop.index }}"
+              method="post"
+            >
+              <button
+                class="del-button"
+                type="button"
+                onclick="submitForm('{{ loop.index }}')"
+              >
+                <ion-icon name="trash-outline"></ion-icon>
+              </button>
+            </form>
+          </div>
+          <p class="new-posts">{{ post[0] }}</p>
+        </article>
+        {% endfor %}
+      </section>
+    </main>
+
+    <footer class="footer" id="about">
+      <div class="footer-content">
+        <section class="left">
+          <div class="footer-column">
+            <a href="#" class="footer-link"
+              ><ion-icon class="icons" name="logo-instagram"></ion-icon
+            ></a>
+            <a href="#" class="footer-link"
+              ><ion-icon class="icons" name="logo-github"></ion-icon
+            ></a>
+          </div>
+        </section>
+        <section class="right">
+          <div class="footer-column">
+            <a href="#" class="footer-link">Portfolio</a>
+            <a href="#" class="footer-link"
+              ><span class="footer-author">Grem</span></a
+            >
+          </div>
+        </section>
+      </div>
+    </footer>
+
+    <script
+      type="module"
+      src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"
+    ></script>
+    <script
+      nomodule
+      src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"
+    ></script>
+    <script>
+      function submitForm(index) {
+        if (confirm('Are you sure you want to delete this post?')) {
+          document.getElementById('delete-form-' + index).submit();
+        }
+      }
+    </script>
+  </body>
+</html>
