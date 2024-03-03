@@ -13,6 +13,7 @@ app.secret_key = os.environ.get("SECRET_KEY")
 
 USERNAME = os.getenv("USERNAME")
 PASSWORD = os.getenv("PASSWORD")
+CREATOR = os.getenv("CREATOR")
 
 
 @app.route("/", methods=["GET", "POST"])
@@ -33,7 +34,7 @@ def home():
         )
         for post in app.db.posts.find({})
     ]
-    return render_template("index.html", posts=posts_with_date, logged_in=logged_in, user=user)
+    return render_template("index.html", posts=posts_with_date, logged_in=logged_in, user=user, creator=CREATOR)
 
 
 @app.route("/login", methods=["GET", "POST"])
