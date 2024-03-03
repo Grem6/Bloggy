@@ -131,7 +131,7 @@ body {
 }
 
 .posts {
-  margin-top: 50px;
+  margin-top: 56px;
   font-size: 12px;
   text-transform: uppercase;
   margin-bottom: 12px;
@@ -392,6 +392,6 @@ body {
   }
 
   .posts{
-    margin-top: 70px;
+    margin-top: 80px;
   }
 }
