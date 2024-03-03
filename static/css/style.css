@@ -131,7 +131,7 @@ body {
 }
 
 .posts {
-  margin-top: 40px;
+  margin-top: 50px;
   font-size: 12px;
   text-transform: uppercase;
   margin-bottom: 12px;
@@ -389,5 +389,9 @@ body {
   .navbar-img {
     height: 60px;
     margin-bottom: 10px;
+  }
+
+  .posts{
+    margin-top: 70px;
   }
 }
