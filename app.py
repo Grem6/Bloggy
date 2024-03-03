@@ -18,6 +18,7 @@ PASSWORD = os.getenv("PASSWORD")
 @app.route("/", methods=["GET", "POST"])
 def home():
     logged_in = session.get("logged_in")
+    user = session.get("current_user")
     print(logged_in)
     if request.method == "POST" and session.get("logged_in"):
         post_content = request.form.get("content")
@@ -32,7 +33,7 @@ def home():
         )
         for post in app.db.posts.find({})
     ]
-    return render_template("index.html", posts=posts_with_date, logged_in=logged_in)
+    return render_template("index.html", posts=posts_with_date, logged_in=logged_in, user=user)
 
 
 @app.route("/login", methods=["GET", "POST"])
@@ -42,6 +43,7 @@ def login():
         password = request.form.get("password")
         if username == USERNAME and password == PASSWORD:
             session["logged_in"] = True
+            session["current_user"] = username
             return redirect(url_for("home"))
         else:
             return render_template("index.html")
