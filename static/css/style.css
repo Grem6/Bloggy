@@ -23,8 +23,8 @@ html {
 
 body {
   font-family: 'Inter', sans-serif;
-  background-color: #e3f6f5;
-  color: #272343;
+  background-color: #faeee7;
+  color: #33272a;
 }
 
 .navbar {
@@ -111,8 +111,8 @@ body {
 }
 
 .form-submit-button {
-  background-color: #272343;
-  color: #fffffe;
+  background-color: #ff8ba7;
+  color: #33272a;
   padding: 12px;
   font-size: 16px;
   border: none;
@@ -122,7 +122,7 @@ body {
 }
 
 .form-submit-button:hover {
-  background-color: #272343;
+  background-color: #ff8ba7;
   color: #fffffe;
   padding: 12px;
   font-size: 16px;
@@ -159,8 +159,8 @@ body {
 .post-date {
   font-weight: bolder;
   font-size: 10px;
-  background-color: #2d334a;
-  color: #fffffe;
+  background-color: #ffc6c7;
+  color: #33272a;
   border-radius: 10px;
   padding: 5px;
 }
@@ -363,7 +363,7 @@ body {
   }
 
   .navbar-link {
-    font-size: 20px;
+    font-size: 15px;
   }
 
   .navbar-title {
